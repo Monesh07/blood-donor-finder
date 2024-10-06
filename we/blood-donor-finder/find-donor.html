@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Donor</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        button {
+            background-color: #ff4b5c; 
+            color: white; 
+            height: 30px;
+            width: 110px;
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease; 
+            font-weight: bolder;
+        }
+
+        button:hover {
+            background-color: #ff3b4c; 
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header style="padding: 0px;">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="logo">
+            </div>
+            <div class="navigation-container">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="find-donor.html">Find Donor</a></li>
+                        <li><a href="donate.html">Donate Blood</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <div class="find-donor">
+        <h1>Find Your Donor</h1>
+        <form id="search-form">
+            <label for="bloodtype">Select Blood Type:</label><br>
+            <select id="bloodtype" name="bloodtype">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select><br>
+            <label for="location">Enter Location:</label><br>
+            <input type="text" id="location" name="location" placeholder="Enter city or zip code"><br>
+            <button type="button" id="findDonorBtn">Find Donor</button>
+        </form>
+    </div>
+    
+    <div id="Search-result">
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            $('#findDonorBtn').click(function() {
+                var bloodtype = $('#bloodtype').val();
+                var location = $('#location').val();
+                if (bloodtype === '' || location === '') {
+                    alert('Please fill out all fields.');
+                    return;
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'find-donor.php',  
+                    data: { bloodtype: bloodtype, location: location },
+                    success: function(response) {
+                        $('#Search-result').html(response);  
+                    },
+                    error: function() {
+                        $('#Search-result').html('An error occurred while retrieving donors.');
+                    }
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>

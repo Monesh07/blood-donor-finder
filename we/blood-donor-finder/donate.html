@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Blood</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="logo">
+            </div>
+            <div class="navigation-container">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="find-donor.html">Find Donor</a></li>
+                        <li><a href="donate.html">Donate Blood</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="Donate">
+        <h1>Donate Your Blood</h1>
+        <form id="donate-form" method="post">
+            <label for="name">Donor Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your Name" required><br>
+
+            <label for="bloodtype">Select Blood Type:</label><br>
+            <select id="bloodtype" name="bloodtype" required>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select><br>
+
+            <label for="location">Enter Location:</label><br>
+            <input type="text" id="location" name="location" placeholder="Enter city or zip code" required><br>
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required><br>
+
+            <label for="last-donation">Enter your last Donation (if any):</label><br>
+            <input type="text" id="last-donation" name="last-donation" placeholder="Enter your last donation"><br>
+            
+            <button type="submit">Donate</button>
+        </form>
+    </div>
+
+    <div id="Donate-result">
+        
+    </div>
+
+    <script>      
+        $(document).ready(function() {
+            $('#donate-form').submit(function(e) {
+                e.preventDefault(); 
+                $.ajax({
+                    type: 'POST',
+                    url: 'store-donation.php', 
+                    data: $(this).serialize(), 
+                    success: function(response) {   
+                        $('#Donate-result').html(response);
+                    },
+                    error: function() {
+                        $('#Donate-result').html('An error occurred. Please try again.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

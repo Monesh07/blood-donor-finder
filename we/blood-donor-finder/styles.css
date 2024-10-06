@@ -1,0 +1,202 @@
+body{
+    background-color: #eaeaea;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #e76b6b;
+    display: flex;
+    flex-direction: row;
+}
+.header-container{
+    display: flex;
+    padding: 10px;
+    max-height: fit-content;
+}
+.logo-container img{
+    height: 50px;
+}
+nav{
+    
+    margin-left: -40px;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+}
+nav ul li{
+    margin: 0 40px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+.intro{
+    display: flex;
+}
+.intro-image{
+    position: absolute;
+    left: 1049px;
+}
+.intro-content{
+    position: absolute;
+    left: 50px;
+}
+.intro-content h1{
+    font-size: 80px;
+    
+}
+.intro-content p{
+    margin-top: -50px;
+    line-height: 22px;
+}
+.intro-content button{
+    height: 40px;
+    width: 110px;
+    margin-right: 20px;
+    border-radius: 8px;
+    border: none;
+}
+#bt-donate{
+    background-color: #e76b6b;
+    color: aliceblue;
+    font-weight: bolder;
+}
+#button a{
+    text-decoration: none;
+    color: aliceblue;
+}
+#bt-find{
+    border: 2px solid #e76b6b;
+    background-color: rgb(253, 253, 253);
+    font-weight: bold;
+}
+.about-container{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+}
+.img-about{
+    border: 6px solid #e76b6b;
+    border-radius: 50px;
+    height: 550px;
+}
+.img-about img{
+    margin-top: 40px;
+}
+.aboutus{
+    padding: 50px;
+    padding-left: 100px;
+    text-align: justify;
+}
+.aboutus h1{
+    font-size: 40px;
+    color: #b21616;
+}
+.aboutus p{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.find-donor{
+    border: 2px solid #b21616;
+    max-width: fit-content;
+    padding: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    height: 350px;
+    margin-left: 500px;
+    margin-top: 80px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    
+}
+.find-donor form{
+    line-height: 50px;
+    margin-top: -20px;
+}
+.find-donor form input{
+    width: 400px;
+    height: 40px;
+}
+.find-donor form select{
+    width: 400px;
+    height: 40px;
+}
+.find-donor h1{
+    margin-top: -10px;
+    color: #b21616;
+}
+.find-donor button{
+    width: 120px;
+    height: 35px;
+    background-color: #e76b6b;
+    font-weight: bolder;
+    border: none;
+    border-radius: 7px;
+    color: aliceblue;
+    box-shadow: 2px 2px 5px 0px #676666;
+}
+#Search-result{
+    margin-left: 500px;
+    box-shadow: 2px 2px 6px 2px gray;
+    width: 400px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: cursive;
+    line-height: 30px;
+    
+}
+.Donate{
+    border: 2px solid #b21616;
+    max-width: fit-content;
+    padding: 50px;
+    border-radius: 10px;
+    line-height: 30px;
+    background-color: white;
+    margin-left: 600px;
+    margin-top: 40px;
+}
+.Donate form input{
+    height: 29px;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 3px;
+    width: 300px;
+    
+}
+.Donate form button{
+    background-color: #e76b6b;
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bolder;
+    border: none;
+    box-shadow: 2px 2px 5px #676666;
+    cursor: pointer;
+}
+.Donate form select{
+    width: 300px;
+    height: 35px;
+    padding: 3px;
+    border-radius: 6px;
+    border: 1px solid;
+}
+#Donate-result{
+    margin-left: 610px;
+    box-shadow: 2px 2px 6px 2px gray;
+    width: 360px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: cursive;
+    line-height: 30px;
+}
